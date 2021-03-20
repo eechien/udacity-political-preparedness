@@ -2,6 +2,10 @@ package com.example.android.politicalpreparedness.network
 
 import com.example.android.politicalpreparedness.network.jsonadapter.DateAdapter
 import com.example.android.politicalpreparedness.network.jsonadapter.ElectionAdapter
+import com.example.android.politicalpreparedness.network.models.Election
+import com.example.android.politicalpreparedness.network.models.ElectionResponse
+import com.example.android.politicalpreparedness.network.models.RepresentativeResponse
+import com.example.android.politicalpreparedness.representative.model.Representative
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -13,9 +17,9 @@ import retrofit2.http.Query
 private const val BASE_URL = "https://www.googleapis.com/civicinfo/v2/"
 
 private val moshi = Moshi.Builder()
-        .add(KotlinJsonAdapterFactory())
         .add(ElectionAdapter()) // FIXME?
         .add(DateAdapter()) // FIXME?
+        .add(KotlinJsonAdapterFactory())
         .build()
 
 private val retrofit = Retrofit.Builder()
@@ -31,13 +35,13 @@ private val retrofit = Retrofit.Builder()
 
 interface CivicsApiService {
     @GET("elections")
-    suspend fun getElections()
+    suspend fun getElections(): ElectionResponse
 
-    @GET("voterinfo")
-    suspend fun getVoterInfo(@Query("address") address: String,) // FIXME address param?
+//    @GET("voterinfo")
+//    suspend fun getVoterInfo(@Query("address") address: String): List<> // FIXME address param?
 
     @GET("representatives")
-    suspend fun getRepresentatives(@Query("address") address: String,) // FIXME address param?
+    suspend fun getRepresentatives(@Query("address") address: String,): RepresentativeResponse // FIXME address param?
 }
 
 object CivicsApi {
