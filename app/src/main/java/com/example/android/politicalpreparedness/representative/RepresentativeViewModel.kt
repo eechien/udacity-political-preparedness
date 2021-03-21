@@ -40,15 +40,8 @@ class RepresentativeViewModel: ViewModel() {
 
     }
 
-    //TODO: Create function get address from geo location
-    fun onSearchRepsFromMyLocation() {
-
-    }
-
-    fun onSearchRepsFromAddressForm(
-            line1: String, line2: String, city: String, state: String, zip: String
-    ) {
-        _address.value = Address(line1, line2, city, state, zip)
+    fun onSearchReps(address: Address) {
+        _address.value = address
         searchRepresentatives()
     }
 

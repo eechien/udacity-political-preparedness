@@ -24,4 +24,7 @@
     <string name="find_my_reps">Find My Representatives</string>
     <string name="use_location">Use My Location</string>
     <string name="my_representatives">My Representatives</string>
+    <string name="settings">Settings</string>
+    <string name="permission_denied_explanation">You need to grant location permission in order to select the location.</string>
+    <string name="issue_getting_location">Issue getting location</string>
 </resources>
