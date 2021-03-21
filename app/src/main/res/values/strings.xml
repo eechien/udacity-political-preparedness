@@ -7,4 +7,12 @@
 
     <string name="upcoming_elections">Upcoming Elections</string>
     <string name="saved_elections">Saved Elections</string>
+
+    <string name="state_header">Election Information</string>
+    <string name="state_locations">Voting Locations</string>
+    <string name="state_ballot">Ballot Information</string>
+    <string name="state_correspondence_header">Correspondence Address</string>
+
+    <string name="follow_election">Follow Election</string>
+    <string name="unfollow_election">Unfollow Election</string>
 </resources>

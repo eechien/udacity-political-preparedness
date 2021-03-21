@@ -5,6 +5,7 @@ import com.example.android.politicalpreparedness.network.jsonadapter.ElectionAda
 import com.example.android.politicalpreparedness.network.models.Election
 import com.example.android.politicalpreparedness.network.models.ElectionResponse
 import com.example.android.politicalpreparedness.network.models.RepresentativeResponse
+import com.example.android.politicalpreparedness.network.models.VoterInfoResponse
 import com.example.android.politicalpreparedness.representative.model.Representative
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
@@ -37,8 +38,11 @@ interface CivicsApiService {
     @GET("elections")
     suspend fun getElections(): ElectionResponse
 
-//    @GET("voterinfo")
-//    suspend fun getVoterInfo(@Query("address") address: String): List<> // FIXME address param?
+    @GET("voterinfo")
+    suspend fun getVoterInfo(
+            @Query("address") address: String,
+            @Query("electionId") electionId: Int
+    ): VoterInfoResponse
 
     @GET("representatives")
     suspend fun getRepresentatives(@Query("address") address: String,): RepresentativeResponse // FIXME address param?
