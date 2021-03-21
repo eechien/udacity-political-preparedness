@@ -6,14 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.android.politicalpreparedness.election.adapter.ElectionListAdapter
 import com.example.android.politicalpreparedness.network.models.Division
 import com.example.android.politicalpreparedness.network.models.Election
+import com.example.android.politicalpreparedness.representative.adapter.RepresentativeListAdapter
+import com.example.android.politicalpreparedness.representative.model.Representative
 import java.text.SimpleDateFormat
 import java.util.*
-
-@BindingAdapter("listData")
-fun bindRecyclerView(recyclerView: RecyclerView, data: List<Election>?) {
-    val adapter = recyclerView.adapter as ElectionListAdapter
-    adapter.submitList(data)
-}
 
 @BindingAdapter("dateText")
 fun dateToString(textView: TextView, date: Date?) {
