@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android.politicalpreparedness.R
 import com.example.android.politicalpreparedness.database.ElectionDatabase
@@ -33,11 +34,9 @@ class ElectionsFragment: Fragment() {
         val binding = FragmentElectionBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
         binding.electionsViewModel = viewModel
-        
-        //TODO: Link elections to voter info
 
         val upcomingElectionListAdapter = ElectionListAdapter(ElectionListener {
-            // TODO click handler
+            viewModel.displayElectionDetails(it)
         })
         binding.upcomingElectionsRecycler.adapter = upcomingElectionListAdapter
         binding.upcomingElectionsRecycler.layoutManager = LinearLayoutManager(requireContext())
@@ -48,7 +47,7 @@ class ElectionsFragment: Fragment() {
         })
 
         val savedElectionListAdapter = ElectionListAdapter(ElectionListener {
-            // TODO click handler
+            viewModel.displayElectionDetails(it)
         })
         binding.savedElectionsRecycler.adapter = savedElectionListAdapter
         binding.savedElectionsRecycler.layoutManager = LinearLayoutManager(requireContext())
@@ -57,7 +56,15 @@ class ElectionsFragment: Fragment() {
                 savedElectionListAdapter.submitList(elections)
             }
         })
-        return binding.root
 
+        viewModel.navigateToSelectedElection.observe(viewLifecycleOwner, Observer { election ->
+            if (election != null) {
+                this.findNavController().navigate(
+                        ElectionsFragmentDirections.actionShowVoterInfo(election.id, election.division)
+                )
+                viewModel.displayElectionComplete()
+            }
+        })
+        return binding.root
     }
 }
