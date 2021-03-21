@@ -9,8 +9,8 @@
     </data>
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="90dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/representative_height"
         android:orientation="horizontal">
         <ImageView
             android:id="@+id/representative_photo"
@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
                     <TextView
@@ -41,6 +41,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@{representative.official.party}"/>
+                </LinearLayout>
                 <ImageButton
                     android:id="@+id/www_icon"
                     android:layout_width="wrap_content"
@@ -56,11 +57,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_twitter" />
-                </LinearLayout>
             </LinearLayout>
-
         </LinearLayout>
-
     </LinearLayout>
-
 </layout>
