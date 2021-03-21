@@ -9,12 +9,12 @@ import kotlinx.coroutines.launch
 
 class ElectionsViewModel(
         application: Application,
-        private val database: ElectionDao
+        database: ElectionDao
 ): AndroidViewModel(application) {
 
     val upcomingElections = MutableLiveData<List<Election>>()
 
-    val savedElections = MutableLiveData<List<Election>>() // FIXME how to update this when it changes
+    val savedElections = database.getElections()
 
     private val _navigateToSelectedElection = MutableLiveData<Election>()
     val navigateToSelectedElection: LiveData<Election>
@@ -22,10 +22,9 @@ class ElectionsViewModel(
 
     init {
         populateUpcomingElections()
-        populateSavedElections()
     }
 
-    fun populateUpcomingElections() { // or rename get?
+    private fun populateUpcomingElections() {
         viewModelScope.launch {
             try {
                 var listResult = CivicsApi.retrofitService.getElections().elections
@@ -35,13 +34,6 @@ class ElectionsViewModel(
             } catch (e: Exception) {
                 upcomingElections.value = ArrayList()
             }
-        }
-    }
-
-    fun populateSavedElections() { // or name refresh?
-        viewModelScope.launch {
-            val result = database.getElections()
-            savedElections.value = result
         }
     }
 

@@ -1,5 +1,6 @@
 package com.example.android.politicalpreparedness.database
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -13,7 +14,7 @@ interface ElectionDao {
     suspend fun saveElection(election: Election)
 
     @Query("SELECT * FROM election_table")
-    suspend fun getElections(): List<Election> // Or liveData??
+    fun getElections(): LiveData<List<Election>>
 
     @Query("SELECT * FROM election_table WHERE id=:electionId")
     suspend fun getElectionById(electionId: Int): Election?
