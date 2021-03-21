@@ -43,7 +43,12 @@ class RepresentativeViewHolder(val binding: ListViewRepresentativeBinding): Recy
     fun bind(item: Representative) {
         binding.representative = item
         binding.representativePhoto.setImageResource(R.drawable.ic_profile)
-
+        if (!item.official.channels.isNullOrEmpty()) {
+            showSocialLinks(item.official.channels)
+        }
+        if (!item.official.urls.isNullOrEmpty()) {
+            showWWWLinks(item.official.urls)
+        }
         //TODO: Show social links ** Hint: Use provided helper methods
         //TODO: Show www link ** Hint: Use provided helper methods
 
