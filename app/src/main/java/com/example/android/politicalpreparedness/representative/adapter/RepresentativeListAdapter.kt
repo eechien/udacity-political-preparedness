@@ -49,8 +49,6 @@ class RepresentativeViewHolder(val binding: ListViewRepresentativeBinding): Recy
         if (!item.official.urls.isNullOrEmpty()) {
             showWWWLinks(item.official.urls)
         }
-        //TODO: Show social links ** Hint: Use provided helper methods
-        //TODO: Show www link ** Hint: Use provided helper methods
 
         binding.executePendingBindings()
     }
@@ -91,5 +89,3 @@ class RepresentativeViewHolder(val binding: ListViewRepresentativeBinding): Recy
     }
 
 }
-
-//TODO: Create RepresentativeListener

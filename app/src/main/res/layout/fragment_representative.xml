@@ -10,14 +10,12 @@
             type="com.example.android.politicalpreparedness.representative.RepresentativeViewModel" />
     </data>
 
-    <!-- TODO: Add motion scene to hide form on vertical scroll. -->
     <androidx.constraintlayout.motion.widget.MotionLayout
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         tools:context="com.example.android.politicalpreparedness.MainActivity"
         app:layoutDescription="@xml/fragment_representative_scene">
 
-        <!-- TODO: Add visual styling and content -->
         <TextView
             android:id="@+id/search_title"
             android:layout_width="wrap_content"
@@ -27,7 +25,6 @@
             style="@style/headline"
             android:text="@string/representatives_search_title"/>
 
-        <!-- TODO: Add visual styling and content -->
         <EditText
             android:id="@+id/address_line_1"
             android:layout_width="match_parent"
@@ -39,7 +36,6 @@
             android:text="@{viewModel.address.line1}"
             android:hint="@string/address_line_1"/>
 
-        <!-- TODO: Add visual styling and content -->
         <EditText
             android:id="@+id/address_line_2"
             android:layout_width="match_parent"
@@ -51,7 +47,6 @@
             android:text="@{viewModel.address.line2}"
             android:hint="@string/address_line_2"/>
 
-        <!-- TODO: Add visual styling and content -->
         <EditText
             android:id="@+id/city"
             android:layout_width="0dp"
@@ -64,7 +59,6 @@
             android:text="@{viewModel.address.city}"
             android:hint="@string/city"/>
 
-        <!-- TODO: Add visual styling and content -->
         <Spinner
             android:id="@+id/state"
             android:layout_width="0dp"
@@ -78,7 +72,6 @@
             stateValue="@{viewModel.address.state}"
             />
 
-        <!-- TODO: Add visual styling and content -->
         <EditText
             android:id="@+id/zip"
             android:layout_width="0dp"
@@ -92,7 +85,6 @@
             android:text="@{viewModel.address.zip}"
             android:hint="@string/zip" />
 
-        <!-- TODO: Add visual styling and label -->
         <Button
             android:id="@+id/button_search"
             android:layout_width="match_parent"
@@ -102,7 +94,6 @@
             style="@style/button_style"
             android:text="@string/find_my_reps"/>
 
-        <!-- TODO: Add visual styling and content -->
         <Button
             android:id="@+id/button_location"
             android:layout_width="match_parent"
@@ -112,7 +103,6 @@
             app:layout_constraintBottom_toTopOf="@id/representative_title"
             android:text="@string/use_location"/>
 
-        <!-- TODO: Add visual styling and content -->
         <TextView
             android:id="@+id/representative_title"
             android:layout_width="match_parent"
@@ -123,7 +113,6 @@
             app:layout_constraintBottom_toTopOf="@id/representatives_recycler"
             android:text="@string/my_representatives"/>
 
-        <!-- TODO: Add visual styling and content -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/representatives_recycler"
             android:layout_width="0dp"

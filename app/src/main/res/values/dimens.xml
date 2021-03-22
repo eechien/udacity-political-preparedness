@@ -2,7 +2,6 @@
 <resources>
     <dimen name="default_padding">8dp</dimen>
 
-    <!-- TODO: Add necessary dimension values -->
     <dimen name="representative_height">90dp</dimen>
     <dimen name="profile_height">70dp</dimen>
     <dimen name="profile_radius">35dp</dimen>
