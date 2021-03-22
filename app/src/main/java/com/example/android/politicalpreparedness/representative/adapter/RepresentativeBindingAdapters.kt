@@ -19,7 +19,6 @@ fun fetchImage(view: ImageView, src: String?) {
                         .placeholder(R.drawable.ic_profile)
                         .error(R.drawable.ic_profile))
                 .into(view)
-        //TODO: circle crop
     }
 }
 
