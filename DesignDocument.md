@@ -24,3 +24,11 @@ icon. The list item should also include links to their webpage, facebook page, a
 when applicable.
 
 Scrolling through the representative list should trigger a motion event to hide the address form.
+
+### Milestones
+* Create the design document and construct the basic application UI.
+* Integrate the API so that the application can pull civic data for upcoming elections.
+* Integrate the database to save elections.
+* Integrate the API so that the application can pull civic data for a provided address
+  and get representatives for that address.
+* Integrate hardware to get phone's location and pull representatives for that location
