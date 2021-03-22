@@ -14,11 +14,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{election.name}"/>
+            android:text="@{election.name}"
+            style="@style/subhead"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{election.electionDay.toString()}"/> <!-- FIXME use converter or binding adapter??-->
+            android:text="@{election.electionDay.toString()}"
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
     </LinearLayout>
 
 </layout>

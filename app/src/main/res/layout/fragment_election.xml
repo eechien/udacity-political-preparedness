@@ -19,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/upcoming_elections"
+            style="@style/headline"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -34,6 +35,7 @@
             app:layout_constraintBottom_toTopOf="@id/saved_elections_header"
             tools:itemCount="4"
             tools:listitem="@layout/list_view_election"
+            android:layout_margin="@dimen/default_padding"
             />
 
         <TextView
@@ -41,6 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/saved_elections"
+            style="@style/headline"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/upcoming_elections_header"
@@ -53,9 +56,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/saved_elections_header"
-            app:layout_constraintBottom_toBottomOf="parent"
             tools:itemCount="4"
             tools:listitem="@layout/list_view_election"
+            android:layout_margin="@dimen/default_padding"
             />
 
 
