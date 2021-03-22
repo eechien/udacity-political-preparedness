@@ -17,7 +17,9 @@
         <androidx.cardview.widget.CardView
             android:layout_width="@dimen/profile_height"
             android:layout_height="@dimen/profile_height"
-            app:cardCornerRadius="@dimen/profile_radius">
+            app:cardCornerRadius="@dimen/profile_radius"
+            android:layout_marginTop="@dimen/default_padding"
+            android:layout_marginStart="@dimen/default_padding">
             <ImageView
                 android:id="@+id/representative_photo"
                 android:layout_width="match_parent"
@@ -33,41 +35,53 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{representative.office.name}"/>
+                android:text="@{representative.office.name}"
+                android:layout_marginTop="@dimen/default_padding"
+                android:layout_marginStart="@dimen/default_padding"
+                style="@style/subhead"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:orientation="vertical">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/default_padding"
                         android:text="@{representative.official.name}"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/default_padding"
                         android:text="@{representative.official.party}"/>
                 </LinearLayout>
                 <ImageButton
                     android:id="@+id/www_icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:visibility="invisible"
+                    android:visibility="visible"
+                    android:padding="@dimen/default_padding"
+                    android:backgroundTint="@color/white"
                     android:src="@drawable/ic_www"/>
                 <ImageButton
                     android:id="@+id/facebook_icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:visibility="invisible"
+                    android:visibility="visible"
+                    android:padding="@dimen/default_padding"
+                    android:backgroundTint="@color/white"
                     android:src="@drawable/ic_facebook"/>
                 <ImageButton
                     android:id="@+id/twitter_icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:visibility="invisible"
+                    android:visibility="visible"
+                    android:padding="@dimen/default_padding"
+                    android:backgroundTint="@color/white"
                     android:src="@drawable/ic_twitter" />
             </LinearLayout>
         </LinearLayout>
